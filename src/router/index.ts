@@ -20,7 +20,7 @@ const router = createRouter({
       component: EventListView,
       props: (route) => ({
         page: parseInt((route.query?.page as string) || '1'),
-        size: parseInt((route.query?.size as string) || '2')
+        size: parseInt((route.query?.size as string) || '3')
       })
     },
     {
@@ -94,7 +94,14 @@ const router = createRouter({
       name: 'network-error-view',
       component: NetworkErrorView
     }
-  ]
+  ],
+  scrollBehavior(to , from , savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0}
+    }
+  }
 })
 router.beforeEach(() => {
   nProgress.start()

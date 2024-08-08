@@ -7,7 +7,7 @@ import { storeToRefs } from 'pinia';
 const store = useMessageStore()
 const { message } = storeToRefs(store)
 const router = useRouter()
-const pageSize = ref(2)
+const pageSize = ref(3)
 
 const updatePageSize = (size: number) => {
   pageSize.value = size
@@ -32,7 +32,7 @@ const updatePageSize = (size: number) => {
         <div>
           <label for="page-size">Events per page:</label>
           <select id="page-size" v-model="pageSize" @change="updatePageSize(pageSize)">
-            <option value="2">2</option>
+            <option value="3">3</option>
             <option value="5">5</option>
             <option value="10">10</option>
           </select>
