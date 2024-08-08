@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import EventCard from '@/components/EventCard.vue'
-import NameTag from '@/components/NameTag.vue'
 import { type Event } from '@/types'
 import { ref, onMounted, computed, watchEffect } from 'vue'
 import EventService from '@/services/EventService'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const events = ref<Event[] | null>(null)
 const totalEvents = ref(0)
 const hasNextPage = computed(() => {
@@ -33,6 +34,7 @@ onMounted(() => {
       })
       .catch((error) => {
         console.error('There was an error!', error)
+        router.push({ name: 'network-error-view'})
       })
   })
 })
