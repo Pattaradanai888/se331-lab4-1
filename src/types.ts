@@ -23,10 +23,10 @@ export interface Student {
   description: string
 }
 
-export interface MessageState{
+export interface MessageState {
   message: string
 }
 
-export interface EventState{
+export interface EventState {
   event: Event | null
 }

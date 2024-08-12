@@ -33,7 +33,7 @@ onMounted(() => {
       })
       .catch((error) => {
         console.error('There was an error!', error)
-        router.push({ name: 'network-error-view'})
+        router.push({ name: 'network-error-view' })
       })
   })
 })
@@ -44,16 +44,16 @@ onMounted(() => {
   <!-- new element -->
   <div class="flex flex-col items-center">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
-    <div class="pagination">
+    <div class="flex w-[290]">
       <RouterLink
-        id="page-prev"
+        class="flex-1 no-underline text-gray-800 text-left px-3"
         :to="{ name: 'event-list-view', query: { page: page - 1, size: size } }"
         rel="prev"
         v-if="page != 1"
         >&#60; Prev Page</RouterLink
       >
       <RouterLink
-        id="page-next"
+        class="flex-1 no-underline text-right text-gray-800 px-3"
         :to="{ name: 'event-list-view', query: { page: page + 1, size: size } }"
         rel="next"
         v-if="hasNextPage"
@@ -63,23 +63,4 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
-.pagination {
-  display: flex;
-  width: 290px;
-}
-
-.pagination a {
-  flex: 1;
-  text-decoration: none;
-  color: #2c3e50;
-}
-
-#page-prev {
-  text-align: left;
-}
-
-#page-next {
-  text-align: right;
-}
-</style>
+<style scoped></style>

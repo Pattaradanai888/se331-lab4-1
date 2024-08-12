@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import StudentCard from '@/components/StudentCard.vue'
-import {type Student} from '@/types'
+import { type Student } from '@/types'
 import { ref, onMounted } from 'vue'
 import StudentService from '@/services/StudentService'
 
-const students = ref<Student[]| null>(null)
+const students = ref<Student[] | null>(null)
 
 onMounted(() => {
   StudentService.getEvents()
@@ -19,15 +19,9 @@ onMounted(() => {
 
 <template>
   <!-- new element -->
-  <div class="students">
+  <div class="flex flex-col items-center">
     <StudentCard v-for="student in students" :key="student.id" :student="student" />
   </div>
 </template>
 
-<style scoped>
-.students {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-</style>
+<style scoped></style>
