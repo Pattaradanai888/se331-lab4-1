@@ -11,6 +11,8 @@ import NetworkErrorView from '@/views/NetworkErrorView.vue'
 import nProgress from 'nprogress'
 import EventService from '@/services/EventService'
 import { useEventStore } from '@/stores/event'
+import AddEventView from '@/views/EventFormView.vue'
+import AddOrganizerView from '@/views/OrganizeFormView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -28,7 +30,7 @@ const router = createRouter({
       name: 'event-layout-view',
       component: EventLayoutView,
       props: true,
-      beforeEnter: (to) => {
+      beforeEnter: async (to) => {
         const id = parseInt(to.params.id as string)
         const eventStore = useEventStore()
         return EventService.getEvent(id)
@@ -93,6 +95,16 @@ const router = createRouter({
       path: '/network-error',
       name: 'network-error-view',
       component: NetworkErrorView
+    },
+    {
+      path: '/add-event',
+      name: 'add-event',
+      component: AddEventView
+    },
+    {
+      path: '/add-organizer',
+      name: 'add-organizer',
+      component: AddOrganizerView
     }
   ],
   scrollBehavior(to, from, savedPosition) {

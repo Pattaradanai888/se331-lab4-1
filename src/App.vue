@@ -47,6 +47,20 @@ const updatePageSize = (size: number) => {
             :to="{ name: 'student-list-view' }"
             >Students</RouterLink
           >
+          |
+          <RouterLink
+            class="font-bold text-gray-700"
+            exact-active-class="text-green-500"
+            :to="{ name: 'add-event' }"
+            >New Event</RouterLink
+          >
+          |
+          <RouterLink
+            class="font-bold text-gray-700"
+            exact-active-class="text-green-500"
+            :to="{ name: 'add-organizer' }"
+            >New Organizer</RouterLink
+          >
         </nav>
         <div>
           <label for="page-size">Events per page:</label>
