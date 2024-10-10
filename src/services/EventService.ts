@@ -24,6 +24,6 @@ export default {
     return apiClient.get<Event[]>('/events?title=' + keyword + '&_limit='+ perPage + '&_page=' + page)
   },
   saveOrganizer(organizer: Organizer) {
-    return apiClient.post('/organizer', organizer)
+    return apiClient.post('/organizers', organizer)
   }
 }
