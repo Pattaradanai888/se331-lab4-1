@@ -13,6 +13,7 @@ import EventService from '@/services/EventService'
 import { useEventStore } from '@/stores/event'
 import AddEventView from '@/views/EventFormView.vue'
 import AddOrganizerView from '@/views/OrganizeFormView.vue'
+import LoginView from '@/views/LoginView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -105,6 +106,11 @@ const router = createRouter({
       path: '/add-organizer',
       name: 'add-organizer',
       component: AddOrganizerView
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView
     }
   ],
   scrollBehavior(to, from, savedPosition) {
