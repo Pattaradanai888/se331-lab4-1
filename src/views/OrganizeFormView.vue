@@ -9,7 +9,8 @@ import ImageUpload from '@/components/ImageUpload.vue';
 const organizer = ref<Organizer>({
     id: 0,
     name: '',
-    images: []
+    images: [],
+    roles: []
 })
 const router = useRouter()
 const store = useMessageStore()
